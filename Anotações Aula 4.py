@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Numpy
 # Numpy tem: Numpy Array(Ndarray). Qual a relação do Numpy array com o que a gente viu na aula 1?
 # As vezes pegamos o conjunto de dados na tupla e usamos no NumpyArray(tem otimização)
@@ -46,7 +45,7 @@ print(np.concatenate([arr1, arr2])) # Passar uma coleção de Arrays. Nesse caso
 # Propriedades de um Numpy Array
 print(arr1.size) # Tamanho de um Numpy Array (quantos elementos tem)
 print(arr1.ndim) # Quantas dimensões tem 
-=======
+
 # Numpy
 # Numpy tem: Numpy Array(Ndarray). Qual a relação do Numpy array com o que a gente viu na aula 1?
 # As vezes pegamos o conjunto de dados na tupla e usamos no NumpyArray(tem otimização)
@@ -94,5 +93,4 @@ print(np.concatenate([arr1, arr2])) # Passar uma coleção de Arrays. Nesse caso
 # Propriedades de um Numpy Array
 print(arr1.size) # Tamanho de um Numpy Array (quantos elementos tem)
 print(arr1.ndim) # Quantas dimensões tem 
->>>>>>> 0cc721e65873a08d69ebe35463e6d7a47db29280
 print(arr1.shape)# Formato da matriz/vetor Resposta: (10,) (10 elementos e 1 linha)
