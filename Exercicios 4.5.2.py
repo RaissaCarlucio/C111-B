@@ -10,18 +10,18 @@ arr = np.loadtxt('C:/Users/usuario/Desktop/C111-B/space.csv', delimiter = ';', d
 #     print(f"{i}: {column_name}")
 
 # 1 - Apresente a porcentagem de quantas missoes deram certo;
-
 status_mission = arr[1:, -1]
 print("Verificando: ", status_mission) # extraindo a coluna status mission
 
 # Contar o numero total de missoes:
-total_de_missoes = np.size(status_mission) # Tamanho da coluna Status_Mission
-print("Total de missoes: ", total_de_missoes)
+qtd_de_missoes_success = np.char.find(status_mission, 'Success')
 
-missoes_sucessidas = np.count_nonzero(status_mission=="Success")
-print("Porcentagem das missoes bem sucessidas: ", ((missoes_sucessidas/total_de_missoes)*100), "%")
+num_de_missoes = np.size(np.where(qtd_de_missoes_success!=-1))
+
+print("Número total de missoes com sucesso:", num_de_missoes)
 
 print("\n")
+
 
 # 2 - Qual a media de gastos de uma missao espacial se baseando em missoes que possuam valores disponiveis(>0)? (CUSTOS)
 cost_column = arr[1:, 6]
