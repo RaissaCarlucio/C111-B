@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 arr = np.loadtxt('C:/Users/usuario/Desktop/C111-B/space.csv', delimiter = ';', dtype = str, encoding = 'utf-8')
 
@@ -11,7 +12,7 @@ arr = np.loadtxt('C:/Users/usuario/Desktop/C111-B/space.csv', delimiter = ';', d
 
 # 1 - Apresente a porcentagem de quantas missoes deram certo;
 status_mission = arr[1:, -1]
-print("Verificando: ", status_mission) # extraindo a coluna status mission
+# print("Verificando: ", status_mission) # extraindo a coluna status mission
 
 # Contar o numero total de missoes:
 qtd_de_missoes_success = np.char.find(status_mission, 'Success')
@@ -25,30 +26,30 @@ print("\n")
 
 # 2 - Qual a media de gastos de uma missao espacial se baseando em missoes que possuam valores disponiveis(>0)? (CUSTOS)
 cost_column = arr[1:, 6]
-print(cost_column)
+# print(cost_column)
 
 # Convertendo os valores para float
 cost_values = cost_column.astype(float)
 
-if np.any(cost_values>0):
-    cost_media = np.mean(cost_values)
-    print(f"A média é: ", cost_media)
+# if np.any(cost_values>0):
+#     cost_media = np.mean(cost_values)
+#     print(f"A média é: ", cost_media)
 
-print("\n")
+# print("\n")
 
 
 # 3 - Encontre quantas missoes espaciais neste DataSet foram realizadas pelos Estados Unidos (USA);
 qtd_missoes = arr[1:, 2]
-print(qtd_missoes)
+# print(qtd_missoes)
 
 qtd_missoes = np.char.find(qtd_missoes, 'USA')
-print("Quantidade de missoes que aparecem USA: ", qtd_missoes)
+# print("Quantidade de missoes que aparecem USA: ", qtd_missoes)
 
 num_ocorrencias = np.size(np.where(qtd_missoes!=-1))
 
-print("Número total de ocorrências de 'USA':", num_ocorrencias)
+# print("Número total de ocorrências de 'USA':", num_ocorrencias)
 
-print("\n")
+# print("\n")
 
 # 4 - Encontre qual foi a missao mais cara realizada pela Empresa "SpaceX"
 cost_column = arr[1:, 6]
@@ -59,7 +60,7 @@ cost_caro = cost_column.astype(float)
 
 mais_cara = np.max(cost_caro)
 
-print("Missao mais cara custa: ", mais_cara)
+# print("Missao mais cara custa: ", mais_cara)
 
 
 print("\n")
@@ -72,13 +73,13 @@ status_mission = arr[1:, -1]
 qtd_missoes_por_empresa = {}
 
 # Iterar sobre as empresas e status da missão
-for empresa, status in zip(nome_das_empresas, status_mission):
-    if status == 'Success':
-        if empresa in qtd_missoes_por_empresa:
-            qtd_missoes_por_empresa[empresa] += 1
-        else:
-            qtd_missoes_por_empresa[empresa] = 1
+# for empresa, status in zip(nome_das_empresas, status_mission):
+#     if status == 'Success':
+#         if empresa in qtd_missoes_por_empresa:
+#             qtd_missoes_por_empresa[empresa] += 1
+#         else:
+#             qtd_missoes_por_empresa[empresa] = 1
 
-for empresa, qtd_missoes in qtd_missoes_por_empresa.items():
-    print(f"A empresa {empresa} realizou {qtd_missoes} missões espaciais com sucesso.")
+# for empresa, qtd_missoes in qtd_missoes_por_empresa.items():
+#     print(f"A empresa {empresa} realizou {qtd_missoes} missões espaciais com sucesso.")
 
